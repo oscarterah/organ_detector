@@ -1,0 +1,98 @@
+<MainWid>:
+    canvas:
+        Color: 
+            rgb: 1,1,1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+
+<StartWid>:
+    canvas:
+        Color: 
+            rgb: 1,1,1
+
+        Rectangle:
+            size:self.size
+            pos: self.pos
+
+<Content>
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "60dp"
+
+    MDTextField:
+        hint_text: "Enter Image crop name"
+
+
+<Load>:
+    SmoothButton:
+        size_hint: None, None
+        size:120, 70
+        pos: 40, 20
+        text: 'load'
+        on_release:
+            root.image_load()
+
+<Detect>:
+    SmoothButton:
+        size_hint:None, None
+        size:120, 70
+        pos:190, 20
+        text: 'Detect'
+        on_release:
+            root.make_detection()
+
+
+<Zoom>:
+    SmoothButton:
+        size_hint:None, None
+        size:120, 70
+        pos:340, 20
+        text: 'Zoom'
+        on_release:
+            root.zoom()
+
+<Crop>:
+    SmoothButton:
+        size_hint:None, None
+        size:120, 70
+        pos:490, 20
+        text: 'Crop'
+        on_release:
+            root.make_crop()
+
+<Stroke@TextInput>:
+    background_color:(0,0,0,0)
+    background_normal:''
+    bold: True
+    font_size:20
+    font_name: "terah"
+    cursor_color: (0,0,0,1)
+
+
+<Stroke1@TextInput>:
+    background_color:(0,0,0,0)
+    background_normal:''
+    bold: True
+    font_size:20
+    font_name: "terah"
+
+
+
+<SmoothButton@Button>:
+    background_color: (0,0,0,0)
+    background_normal: ''
+    back_color: (1,0,1,1)
+    border_radius: [10]
+    font_size:20
+    font_name: "terah"
+    canvas.before:
+        Color:
+            rgba: 0,0,0,1
+        RoundedRectangle:
+            size: self.size
+            pos:self.pos
+            radius:self.border_radius
+
